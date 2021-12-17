@@ -11,15 +11,15 @@ import java.util.ArrayList;
  */
 public class Day1 {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        ArrayList<Integer> measurements = InputHandler.readFile(new File("src/day1/Input.txt"));
+    public void sweep() throws FileNotFoundException {
+        ArrayList<Integer> measurements = InputHandler.readIntegers(new File("src/day1/Input.txt"));
 
-        //System.out.println(countMeasurements(measurements));
-        System.out.println(countIncreases(measurements));
+        System.out.println("Day 1, first half: " + countMeasurements(measurements));
+        System.out.println("Day 1, second half: " + countIncreases(measurements));
     }
 
-    // The first half of the puzzle - How many measurements are larger than the previous measurement?
-    private static int countMeasurements(ArrayList<Integer> measurements) {
+    // The first half of the puzzle - how many measurements are larger than the previous measurement?
+    private int countMeasurements(ArrayList<Integer> measurements) {
         int increases = 0;
         for (int i = 1; i < measurements.size(); i++) {
             if (measurements.get(i) > measurements.get(i - 1)) {
@@ -29,8 +29,8 @@ public class Day1 {
         return increases;
     }
 
-    // The second half of the puzzle - How many sums are larger than the previous sum?
-    private static int countIncreases(ArrayList<Integer> measurements) {
+    // The second half of the puzzle - how many sums are larger than the previous sum?
+    private int countIncreases(ArrayList<Integer> measurements) {
         int firstSum = 0;
         int secondSum = 0;
         int counter = 0;
@@ -47,7 +47,7 @@ public class Day1 {
         return counter;
     }
 
-    private static boolean isIncreased(int first, int second) {
+    private boolean isIncreased(int first, int second) {
         return second > first;
     }
 }
