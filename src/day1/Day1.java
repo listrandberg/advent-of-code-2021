@@ -18,8 +18,10 @@ public class Day1 {
         System.out.println("Day 1, second half: " + countIncreasedSums(measurements));
     }
 
-    // The first half of the puzzle
-    // How many measurements are larger than the previous measurement?
+    /**
+     * The first half of the puzzle
+     * How many measurements are greater than the previous measurement?
+     */
     private int countIncreasedMeasurements(ArrayList<Integer> measurements) {
         int counter = 0;
 
@@ -32,8 +34,10 @@ public class Day1 {
         return counter;
     }
 
-    // The second half of the puzzle
-    // How many sums are larger than the previous sum?
+    /**
+     * The second half of the puzzle
+     * How many sums are greater than the previous sum?
+     */
     private int countIncreasedSums(ArrayList<Integer> measurements) {
         int counter = 0;
         int firstSum;
