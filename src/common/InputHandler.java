@@ -18,13 +18,14 @@ public class InputHandler {
         return integers;
     }
 
-    public static ArrayList<String> readFile(File file) throws FileNotFoundException {
+    public static ArrayList<String> readStrings(File file) throws FileNotFoundException {
         Scanner scanner = new Scanner(file);
-        ArrayList<String> lines = new ArrayList<>();
+        ArrayList<String> strings = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
-            lines.add(scanner.nextLine());
+            strings.add(scanner.nextLine());
         }
-        return lines;
+
+        return strings;
     }
 }

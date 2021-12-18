@@ -12,24 +12,25 @@ import java.util.HashMap;
  */
 public class Day2 {
 
-    private HashMap<String, Integer> directions;
+    private final HashMap<String, Integer> directions;
 
     public Day2() {
         this.directions = new HashMap<>();
     }
 
     public void dive() throws FileNotFoundException {
-        ArrayList<String> input = InputHandler.readFile(new File("src/day2/Input.txt"));
+        ArrayList<String> input = InputHandler.readStrings(new File("src/day2/Input.txt"));
         parseDirections(input);
 
-        // First half of the puzzle
+        // The first half of the puzzle
         // What do you get if you multiply your final horizontal position by your final depth?
-        int depth = calculateDepth();
-        int horizontalPosition = getHorizontalPosition();
+        int depth = calculateDepthPartOne();
+        int horizontalPosition = getHorizontalPositionPartOne();
         System.out.println("Day 2, first half: " + depth * horizontalPosition);
 
-        // Second half of the puzzle
+        // The second half of the puzzle
         // What do you get if you multiply your final horizontal position by your final depth, according to the new instructions?
+
     }
 
     private void parseDirections(ArrayList<String> input) {
@@ -47,11 +48,11 @@ public class Day2 {
         }
     }
 
-    private int calculateDepth() {
+    private int calculateDepthPartOne() {
         return directions.get("down") - directions.get("up");
     }
 
-    private int getHorizontalPosition() {
+    private int getHorizontalPositionPartOne() {
         return directions.get("forward");
     }
 }
